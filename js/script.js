@@ -106,7 +106,7 @@ function checkAnswer(circleNumber)
             swal("Congrats on winning!!!");
             if(level === 4)
             {
-                swal('You have now completed every level!');
+                swal('Congrats you have now completed every level!');
             }
             win = true;
             resetGame();
@@ -164,54 +164,48 @@ function setCircles()
         let circle = document.getElementById(i.toString());
         circle.style.position = "absolute";
         var ident = '#' + i.toString();  var xCoord = x.toString() + 'vw'; var yCoord = y.toString() + 'vh';
-        $(ident).animate({left: xCoord, top: yCoord});
-        circle.style.left = x+"vw";
-        circle.style.top = y+"vh";
+        $(ident).animate({left: xCoord, top: yCoord}, 500);
         circle.style.color = 'whitesmoke';
         circle.disabled=false;
     }
-    console.log(coordinates);
     checkOverlap(coordinates);
-    console.log(coordinates);
 }
 
 //check for circle overlap and move overlapping ones
 function checkOverlap(buttons)
 {
-    buttons.forEach(element =>
+    
+    for(let n = 0; n<buttons.length; n++)
     {
         for(let j=0; j<buttons.length; j++)
         {
    
-            if((element.row <= buttons[j].row+10  &&   element.row >= buttons[j].row-10)   &&   (element.col <= buttons[j].col+5   &&  element.col >= buttons[j].col-5))
+            if((buttons[n].row <= buttons[j].row+3  &&   buttons[n].row >= buttons[j].row-3)   &&   (buttons[n].col <= buttons[j].col+6   &&  buttons[n].col >= buttons[j].col-6))
             {
-                if(element.name !== buttons[j].name)
+                if(buttons[n].name !== buttons[j].name)
                 {
-                    element.row = Math.floor(Math.random() * 45)+50;   
-                    element.col = Math.floor(Math.random() * 45)+40; 
-                    xNew = element.row;  yNew = element.col;
-                    ident = j+1; ident = '#' + ident.toString(); xCoord = xNew.toString() + 'vw'; yCoord = yNew.toString() + 'vh';
-                    $(ident).animate({left: xCoord, top: yCoord});
-                    document.getElementById(element.name).style.left =  element.row+"vw";
-                    document.getElementById(element.name).style.top = element.col+"vh";
-                    checkOverlap(buttons);
+                    buttons[n].row = Math.floor(Math.random() * 45)+50;   
+                    buttons[n].col = Math.floor(Math.random() * 45)+40; 
+                    let xNew = buttons[n].row;  let yNew = buttons[n].col;  xNew = xNew.toString(); yNew = yNew.toString();
+                    let ident2 = n+1; ident2 = '#' + ident2.toString(); xNew = xNew + 'vw'; yNew = yNew + 'vh';
+                    $(ident2).animate({left: xNew, top: yNew}, 250);
+                   checkOverlap(buttons);
                 }
             }
         }
-    });
- 
+    }
 }
 
 
 //set the timer before every game
 function setTimer()
 {
-    if(level===1 || level===4)
+    if(level===1)
     {
         timer = '25';
         
     }
-    else
+    else 
     {
         timer ='20';
     }
@@ -249,7 +243,6 @@ function levelChange()
     {
         document.getElementById('list').innerHTML = 'Rules for Level 4:';
         document.getElementById('game').innerHTML = 'Game Zone: Level 4';
-        document.getElementById('L.1').innerHTML = 'You now back 25 seconds because of the increased difficulty';
         document.getElementById('L.8').innerHTML = "This is the final level, the circles will shift every time you find the right number.";
         level++;
     }
