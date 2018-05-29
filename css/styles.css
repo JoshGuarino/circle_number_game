@@ -195,3 +195,7 @@ ul{
     background-color: whitesmoke;
     color: #0bafd2;
   }
+
+  button:focus {
+      outline:0;
+    }
