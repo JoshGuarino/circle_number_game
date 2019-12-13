@@ -75,8 +75,8 @@ function checkAnswer(circleNumber)
         {
             for(let i=1; i<=numOfCircles; i++)
             {
-                var x = Math.floor(Math.random() * 45)+50;
-                var y = Math.floor(Math.random() * 45)+40;
+                var x = Math.floor(Math.random() * 80) + 10;
+                var y = Math.floor(Math.random() * 50) + 20;
                 let coord = i-1;  coordinates[coord].row = x;  coordinates[coord].col = y;                            
                 let circNum = i; circNum.toString();
                 let circle = document.getElementById(circNum);
@@ -128,7 +128,7 @@ function checkAnswer(circleNumber)
 //reset the game zone after every game
 function resetGame()
 {
-    let x = 55;
+    let x = 30;
     let y = 50;
     for(let i=1; i<=numOfCircles; i++)
     {
@@ -158,15 +158,16 @@ function setCircles()
 {
     for(var i=1; i<=numOfCircles; i++)
     {
-        var x = Math.floor(Math.random() * 45)+50;
-        var y = Math.floor(Math.random() * 45)+40;
+        var x = Math.floor(Math.random() * 80) + 10;
+        var y = Math.floor(Math.random() * 50) + 20;
         let coord = i-1;  coordinates[coord] = new button (i.toString(), x, y);
         let circle = document.getElementById(i.toString());
         circle.style.position = "absolute";
-        var ident = '#' + i.toString();  var xCoord = x.toString() + 'vw'; var yCoord = y.toString() + 'vh';
+        var ident = '#' + i.toString();  
+        var xCoord = x.toString() + 'vw'; var yCoord = y.toString() + 'vh';
         $(ident).animate({left: xCoord, top: yCoord}, 500);
         circle.style.color = 'whitesmoke';
-        circle.disabled=false;
+        circle.disabled = false;
     }
     checkOverlap(coordinates);
 }
@@ -184,8 +185,8 @@ function checkOverlap(buttons)
             {
                 if(buttons[n].name !== buttons[j].name)
                 {
-                    buttons[n].row = Math.floor(Math.random() * 45)+50;   
-                    buttons[n].col = Math.floor(Math.random() * 45)+40; 
+                    buttons[n].row = Math.floor(Math.random() * 80) + 10;   
+                    buttons[n].col = Math.floor(Math.random() * 50) + 20; 
                     let xNew = buttons[n].row;  let yNew = buttons[n].col;  xNew = xNew.toString(); yNew = yNew.toString();
                     let ident2 = n+1; ident2 = '#' + ident2.toString(); xNew = xNew + 'vw'; yNew = yNew + 'vh';
                     $(ident2).animate({left: xNew, top: yNew}, 250);

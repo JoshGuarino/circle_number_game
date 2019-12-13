@@ -1,112 +1,45 @@
-body{
-    padding: 0px;
-    margin: 0px;
+:root {
+    --primary: #0bafd2;
+    --secondary: #404141;   
+  }
+
+body{ padding: 0px; margin: 0px; background-image: url(../images/hex.jpg); }
+nav{ height: 150px; background: linear-gradient(to bottom , var(--secondary), var(--primary)); }
+
+.logo{
+    font-family: fantasy;
+    color: whitesmoke;
+    border: solid black 4px;
+    background-color: var(--secondary);
 }
-
-
-header{
-    display: flex;
-    height: 20vh;
-    width: 100%;
-    background: linear-gradient(to bottom , #404141, #0bafd2);
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-}
-
-div.logo{
-float: left;
-font-family: fantasy;
-color: whitesmoke;
-font-size: 3vw;
-height: 5vw;;
-margin-left: 20vw;
-margin-right: 20vw;
-padding: 2vw;
-border: solid black 4px;
-background-color: #404141;
-}
-
-
 
 #timer{
     font-family: fantasy;
-    font-size: 3vw;
     border: black solid 4px;
-    background-color: #404141;
+    background-color: var(--secondary);
     color: whitesmoke;
     margin: .5vw;
-    min-width: 4vw;
-    min-height: 8vh;
-}
-.timer{
-    text-align: center;
+
 }
 
-.start{
-    background-color: #404141; 
+.menu_btn{
+    background-color: var(--secondary); 
     border: black solid 4px;
     color: whitesmoke;
-    padding: 1vh 2vw;
+    padding: 1vh 1vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 2vw;
+    font-size: 1vw;
     cursor: pointer;
 }
-.start:hover{
-    color: #0bafd2;
-    background-color: black;
-}
+.menu_btn:hover{ color: var(--primary); background-color: black; }
+.menu_btn:disabled{ color: var(--primary); background-color: black; }
 
-.start:disabled{
-    color: #0bafd2;
-    background-color: black;
-}
-
-main{
-    border-top: 5px solid whitesmoke;
-    border-bottom: 5px solid whitesmoke;
-    height: 70vh;
-    border-block-end-width: 100%;
-    background-image: url(../images/hex.jpg);
-}
-
-div.game{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-div.instructions{
-    flex-direction: left;
-    width: 50vw;
-    align-items: center;
-    padding-top: 5vh;
-    padding-left: 5vw;
-    height: 70vh;
-    
-}
-
-div.input{
-    flex-direction: right;
-    width: 50vw;
-    padding-right: 5vw;
-    padding-top: 5vh;
-    height: 70vh;
-    text-align: center;
-}
-
-.game{
-    display: flex;
-    flex-direction: wrap;
-    padding-left: .5vw;
-}
-
-
+.modal-content{ border: solid 2px white; }
+.modal-header{ background: linear-gradient(to bottom , var(--secondary), var(--primary)); }
+.modal-body{ background-color: var(--secondary); color: whitesmoke; }
+.modal-footer{ background: linear-gradient(to bottom , var(--secondary), var(--primary)); }
 
 .circle{
     border: solid 3px black;
@@ -122,80 +55,38 @@ div.input{
 }
 
 
-footer{
-    display: flex;
-    height: 10vh;
-    width: 100%;
-    background: linear-gradient(to top, #404141, #0bafd2);
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    color: black;
-}
-
-
-
 p{
     align-items: center;
     font-size: 2vw;
 }
 
 
-h1{
-    color: whitesmoke;
-    font-size: 2vw;
-    text-decoration: underline;
-}
-
-h1.spacing{
-    font-size: 1.2vw;
-    word-spacing: 5vw;
-}
-
-#time{
-    color: black;
-}
-
-
-p.message{
-    color: whitesmoke;
-    font-size: 1vw;
-}
-
-
-h2{
-    color: whitesmoke;
-    font-size: 2vw;
-    padding-left: 50px;
-
-}
-
-ul{
-    color: whitesmoke;
-    font-size: 1vw;
-}
-
+h1{ color: whitesmoke; font-size: 2vw; text-decoration: underline; }
+h2{ color: whitesmoke; font-size: 2vw; padding-left: 50px;}
+h4{ color: whitesmoke; }
+ul{ color: whitesmoke; font-size: 1vw; }
+p.message{ color: whitesmoke; font-size: 1vw; }
 
 .swal-overlay {
-    background-color: rgba(111, 118, 119, 0.75);
-  }
+background-color: rgba(111, 118, 119, 0.75);
+}
 
-  .swal-modal {
-    background-color: rgba(11,172,206,0.9);
-    border: 3px solid whitesmoke;
-  }
-  
+.swal-modal {
+background-color: rgba(11,172,206,0.9);
+border: 3px solid whitesmoke;
+}
 
-  .swal-text {
-      color:whitesmoke;
-      font-size: 2vw;
-  }
 
-  .swal-button {
-    background-color: whitesmoke;
-    color: #0bafd2;
-  }
+.swal-text {
+    color:whitesmoke;
+    font-size: 2vw;
+}
 
-  button:focus {
-      outline:0;
-    }
+.swal-button {
+background-color: whitesmoke;
+color: var(--primary);
+}
+
+button:focus {
+    outline:0;
+}
