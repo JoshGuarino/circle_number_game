@@ -90,7 +90,8 @@ function checkAnswer(circleNumber)
         }
         for(let j=1; j<=numOfCircles; j++)
         {
-            let curCirc = j; curCirc.toString();
+            let curCirc = j; 
+            curCirc.toString();
             if(document.getElementById(curCirc).style.backgroundColor==='brown')
             {   
                 document.getElementById(curCirc).style.backgroundColor ='whitesmoke';
@@ -135,7 +136,9 @@ function resetGame()
         let circNum = i; circNum.toString();
         let circle = document.getElementById(circNum);
         circle.style.position = "absolute";
-        var ident = '#' + i.toString();  var xCoord = x.toString() + 'vw'; var yCoord = y.toString() + 'vh';
+        var ident = '#' + i.toString();  
+        var xCoord = x.toString() + 'vw'; 
+        var yCoord = y.toString() + 'vh';
         $(ident).animate({left: xCoord, top: yCoord});
         circle.style.left = x+'vw';   
         circle.style.top = y;

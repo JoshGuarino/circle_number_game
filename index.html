@@ -8,22 +8,24 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <Body>
-
+    
     <nav class="navbar text-center">
         <div class="col-1">
             <h1 id='time'>Timer:</h1>
-            <p id='timer'>2</p>
+            <p id='timer'>25</p>
         </div>
-        <div class="col-3"></div>
+        <div class="4">
+
+        </div>
+        <div class="col-2"></div>
         <div class="col-4">
             <h2 class="logo">Circle Number Game</h2>
         </div>
         <div class="col-2"></div>
         <div class="col-2 d-flex justify-content-around">
             <button type="button" class="menu_btn" data-toggle="modal" data-target="#instructions">Instructions</button>
-            <button type="button" class="menu_btn" id='start' onclick="startGame(); disable();">start</button>
+            <button type="button" class="menu_btn" id='start' onclick="startGame();">start</button>
         </div>
     </nav>
 
@@ -31,95 +33,59 @@
     <div class="container-fluid">
 
         <div class="row">
-            <div class='col-12 text-center'>
+            <div class='col-12 text-center' id='game'>
                 <br>
                 <p class='message' id='message'>Click Start to begin the game!</p>
-                <h1 id='game'>Game Zone: Level 1</h1>
-                <br><br><br><br><br>
-                <button class='circle' id='1' onclick='checkAnswer(1);'></button>
-                <button class='circle' id='2' onclick='checkAnswer(2);'></button>
-                <button class='circle' id='3' onclick='checkAnswer(3);'></button>
-                <button class='circle' id='4' onclick='checkAnswer(4);'></button>
-                <button class='circle' id='5' onclick='checkAnswer(5);'></button>
-                <button class='circle' id='6' onclick='checkAnswer(6);'></button>
-                <button class='circle' id='7' onclick='checkAnswer(7);'></button>
-                <button class='circle' id='8' onclick='checkAnswer(8);'></button>
-                <button class='circle' id='9' onclick='checkAnswer(9);'></button>
-                <button class='circle' id='10' onclick='checkAnswer(10);'></button>
+                <h1>Game Zone: Level 1</h1>
+                <br><br><br><br>
             </div>
         </div>
 
 
         <div class="modal fade" tabindex="-1" role="dialog" id="instructions">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Modal title</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <h1 id='list'>Rules for Level 1:</h1>
-                            <ul>
-                                <li id='L.1'>You have 25 seconds.</li>
-                                <li id='L.2'>Click on the start button to begin.</li>
-                                <li id='L.3'>There are 10 circles with a number 1 to 10 hidden underneath.</li>
-                                <li id='L.4'>Click the correct circles in order from 1 to 10</li>
-                                <li id='L.5'>A circle will turn blue and display its number when you have the right
-                                    circle.</li>
-                                <li id='L.6'>A circle will display red when you click the wrong one and keep its number
-                                    hidden.</li>
-                                <li id='L.7'>You do not have to start over after clicking the wrong one.</li>
-                                <li id='L.8'>Each level will get progressively harder.</li>
-                            </ul> <br><br><br>
-                            <h2>Good luck!</h2>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="menu_btn" data-dismiss="modal">Close</button>
-                        </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Instructions</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h1 id='list'>Rules for Level 1:</h1>
+                        <ul>
+                            <li id='L.1'>You have 25 seconds.</li>
+                            <li id='L.2'>Click on the start button to begin.</li>
+                            <li id='L.3'>There are 10 circles with a number 1 to 10 hidden underneath.</li>
+                            <li id='L.4'>Click the correct circles in order from 1 to 10</li>
+                            <li id='L.5'>A circle will turn blue and display its number when you have the right
+                                circle.</li>
+                            <li id='L.6'>A circle will display red when you click the wrong one and keep its number
+                                hidden.</li>
+                            <li id='L.7'>You do not have to start over after clicking the wrong one.</li>
+                            <li id='L.8'>Each level will get progressively harder.</li>
+                        </ul> <br><br><br>
+                        <h2>Good luck!</h2>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="menu_btn" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
+        </div>
 
     </div>
 
-
-
-
-    <!-- <main id="title">
-        <div class='game'>
-            <div class='input'>
-                <p class='message' id='message'>Click Start to begin the game!</p>
-                <h1 id='game'>Game Zone: Level 1</h1>
-                <br><br><br><br><br>
-                <button class='circle' id='1' onclick='checkAnswer(1);'></button>
-                <button class='circle' id='2' onclick='checkAnswer(2);'></button>
-                <button class='circle' id='3' onclick='checkAnswer(3);'></button>
-                <button class='circle' id='4' onclick='checkAnswer(4);'></button>
-                <button class='circle' id='5' onclick='checkAnswer(5);'></button>
-                <button class='circle' id='6' onclick='checkAnswer(6);'></button>
-                <button class='circle' id='7' onclick='checkAnswer(7);'></button>
-                <button class='circle' id='8' onclick='checkAnswer(8);'></button>
-                <button class='circle' id='9' onclick='checkAnswer(9);'></button>
-                <button class='circle' id='10' onclick='checkAnswer(10);'></button>
-            </div>
-        </div>
-    </main> -->
-
 </Body>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 </script>
-<script src="js/script.js"></script>
-<script src="js/circle.js"></script>
+<script src="js/game.js"></script>
+<!-- <script src="js/circle.js"></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </html>

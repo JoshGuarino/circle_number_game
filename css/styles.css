@@ -9,13 +9,13 @@ nav{ height: 150px; background: linear-gradient(to bottom , var(--secondary), va
 .logo{
     font-family: fantasy;
     color: whitesmoke;
-    border: solid black 4px;
+    border: solid black 2px;
     background-color: var(--secondary);
 }
 
 #timer{
     font-family: fantasy;
-    border: black solid 4px;
+    border: black solid 2px;
     background-color: var(--secondary);
     color: whitesmoke;
     margin: .5vw;
@@ -24,7 +24,7 @@ nav{ height: 150px; background: linear-gradient(to bottom , var(--secondary), va
 
 .menu_btn{
     background-color: var(--secondary); 
-    border: black solid 4px;
+    border: black solid 2px;
     color: whitesmoke;
     padding: 1vh 1vw;
     text-align: center;
@@ -42,7 +42,7 @@ nav{ height: 150px; background: linear-gradient(to bottom , var(--secondary), va
 .modal-footer{ background: linear-gradient(to bottom , var(--secondary), var(--primary)); }
 
 .circle{
-    border: solid 3px black;
+    border: solid 2px black;
     background-color: whitesmoke;
     text-align: center;
     text-decoration: none;
