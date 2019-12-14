@@ -63,10 +63,8 @@ function moveCircles(){
     for (let i=1; i<=numOfCircles; i++){
         document.getElementById(i.toString()).style.position = "absolute";
         let coord = move(i);
-        coordinates.set(i, coord);
         checkOverlap(coord, i);
     }
-
 }
 function checkOverlap(circleCoord, circNum){
     coordinates.forEach(coordinate => {
@@ -76,7 +74,6 @@ function checkOverlap(circleCoord, circNum){
         if (circleCoord.x <= coordinate.x+5  &&  circleCoord.x >= coordinate.x-5  &&  
             circleCoord.y <= coordinate.y+5  &&  circleCoord.y >= coordinate.y-5){
             let coord = move(circNum);
-            coordinates.set(circNum, coord);
             checkOverlap(coord, circNum);
         }
     });
@@ -89,6 +86,7 @@ function move(circNum){
     let coord = { x:x, y:y };
     let ident = '#' + circNum.toString();  
     $(ident).animate({left: xCoord, top: yCoord}, 500);
+    coordinates.set(circNum, coord);
     return coord;
 }
 
