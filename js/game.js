@@ -1,6 +1,6 @@
 let coordinates = new Map();
 let counter = 1;
-let time = 25;
+let time = 30;
 let numOfCircles = 10;
 let win = false;
 let timeout;
@@ -25,13 +25,12 @@ function makeCircles(){
         elem.className = 'circle';
         elem.id = i;
         elem.addEventListener('click', function(){
-            checkAnswer(i);
+            checkCircle(i);
         });
         elem.disabled = true;
         document.getElementById('game').appendChild(elem);
     }
 }
-makeCircles();
 
 ////////////////////////////////////////////////////////////////////
 
@@ -92,7 +91,7 @@ function move(circNum){
 
 ////////////////////////////////////////////////////////////////////
 
-function checkAnswer(num){
+function checkCircle(num){
     if(num === counter){
         let elem = document.getElementById(num.toString());
         elem.style.backgroundColor = '#0bafd2';
@@ -110,6 +109,7 @@ function checkAnswer(num){
                 document.getElementById(j.toString()).style.backgroundColor ='whitesmoke';
             }
         }
+        //moveCircles();
         return;
     }
     document.getElementById(num).style.backgroundColor = 'brown';
@@ -120,13 +120,10 @@ function checkAnswer(num){
 
 function reset(){
     for (let i=1; i<=numOfCircles; i++){
-        let elem = document.getElementById(i.toString());
-        elem.style.backgroundColor ='whitesmoke';
-        elem.innerHTML ='';
+        document.getElementById(i.toString()).remove();
     }
     counter = 1;
     document.getElementById('timer').innerText = time;
-    disableCircles();
     toggleStartDisable();
     clearTimeout(timeout);
 }
@@ -134,6 +131,7 @@ function reset(){
 ////////////////////////////////////////////////////////////////////
 
 function startGame(){
+    makeCircles();
     enableCirles();
     toggleStartDisable();
     moveCircles();
