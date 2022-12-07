@@ -109,7 +109,7 @@ function checkCircle(num){
                 document.getElementById(j.toString()).style.backgroundColor ='whitesmoke';
             }
         }
-        //moveCircles();
+        moveCircles();
         return;
     }
     document.getElementById(num).style.backgroundColor = 'brown';
